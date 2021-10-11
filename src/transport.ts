@@ -70,7 +70,7 @@ export default class SentryTransport extends TransportStream {
         scope.setExtras(message.details);
       }
       if (message.innerError) {
-        scope.setExtra('innerError' message.innerError);
+        scope.setExtra('innerError', message.innerError);
       }
 
       if (user !== undefined && SentryTransport.isObject(user)) {
