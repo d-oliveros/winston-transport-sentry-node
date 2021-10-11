@@ -66,6 +66,10 @@ export default class SentryTransport extends TransportStream {
 
       scope.setExtras(meta);
 
+      if (message.details) {
+        scope.setExtras(message.details);
+      }
+
       if (user !== undefined && SentryTransport.isObject(user)) {
         scope.setUser(user);
       }
